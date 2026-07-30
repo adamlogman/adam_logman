@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Adam Logman — Data Scientist & Machine Learning Engineer</title>
+  <meta name="description" content="Adam Logman is a Data Scientist and Machine Learning Engineer specializing in production ML systems, RAG pipelines, satellite-based air quality monitoring, and competitive data science. Top 1% on Zindi.">
+  <meta name="author" content="Adam Logman">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Adam Logman — Data Scientist & Machine Learning Engineer">
+  <meta property="og:description" content="Data Scientist and ML Engineer building continent-scale air quality monitoring pipelines, RAG-based AI agents, and production ML systems.">
+  <meta property="og:type" content="website">
+  <!-- Update og:url once deployed -->
+  <meta property="og:url" content="https://adamlogman.github.io">
+  <!-- Update og:image with a real screenshot or photo once available -->
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Adam Logman — Data Scientist & Machine Learning Engineer">
+  <meta name="twitter:description" content="Data Scientist and ML Engineer. Top 1% on Zindi. Building ML systems that bridge satellite data and sensor networks.">
+
+  <!-- Favicon — inline SVG monogram matching the profile placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230891B2'/%3E%3Ctext x='50' y='56' font-size='42' font-weight='700' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='system-ui,-apple-system,sans-serif'%3EAL%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts — Space Grotesk (display), Inter (body), JetBrains Mono (data/code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Inline script to set theme before paint, preventing a flash of wrong theme -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('adam-theme-preference');
+      if (!t) t = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="header-logo" aria-label="Back to top">
+        <span class="header-name">Adam Logman</span>
+        <span class="header-role">Data Scientist &amp; ML Engineer</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Main navigation">
+        <ul class="header-nav-list">
+          <li><a href="#about" class="header-nav-link">About</a></li>
+          <li><a href="#skills" class="header-nav-link">Skills</a></li>
+          <li><a href="#experience" class="header-nav-link">Experience</a></li>
+          <li><a href="#projects" class="header-nav-link">Projects</a></li>
+          <li><a href="#community" class="header-nav-link">Community</a></li>
+          <li><a href="#honors" class="header-nav-link">Honors</a></li>
+          <li><a href="#education" class="header-nav-link">Education</a></li>
+          <li><a href="#contact" class="header-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-btn theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+        >
+          <!-- Sun icon (shown in dark mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <!-- Moon icon (shown in light mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <button
+          class="icon-btn menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="4" y1="12" x2="20" y2="12"/>
+            <line x1="4" y1="18" x2="20" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile navigation overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="mobile-nav-inner">
+      <div class="mobile-nav-close">
+        <button class="icon-btn" id="mobile-nav-close" type="button" aria-label="Close navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#community" class="mobile-nav-link">Community</a></li>
+        <li><a href="#honors" class="mobile-nav-link">Honors</a></li>
+        <li><a href="#education" class="mobile-nav-link">Education</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+          <p class="hero-greeting">Hello, I'm</p>
+          <h1 class="hero-name">Adam Logman</h1>
+          <p class="hero-title">Data Scientist &amp; Machine Learning Engineer</p>
+          <p class="hero-hook">From satellite data to sensor networks — building ML systems that monitor air quality across an entire continent.</p>
+
+          <div class="hero-actions">
+            <a href="https://github.com/adamlogman" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <!-- GitHub icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/adamlogman" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+              <!-- LinkedIn icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:adamlogman@yahoo.com" class="btn btn-secondary">
+              <!-- Email icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              Email
+            </a>
+            <!-- Add your CV PDF as assets/Adam_Logman_CV.pdf to enable this download link -->
+            <a href="assets/Adam_Logman_CV.pdf" class="btn btn-outline" download>
+              <!-- Download icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrap" aria-hidden="true">
+          <!-- Sensor-pulse rings — the signature element -->
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+          <div class="pulse-ring"></div>
+
+          <div class="photo-frame">
+            <!-- Replace assets/images/profile.jpg with a square headshot, ideally 500x500px or larger -->
+            <img
+              id="profile-img"
+              src="assets/images/profile.jpg"
+              alt="Adam Logman"
+              loading="lazy"
+              width="500"
+              height="500"
+            >
+            <div class="photo-placeholder" aria-hidden="true">AL</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT
+         ============================================================ -->
+    <section id="about" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Background</h2>
+        <p class="about-body">
+          I'm a Data Scientist and Machine Learning Engineer with a dual background in Computer Science and Mechanical Engineering — which probably explains why I care as much about whether a model actually ships as I do about the math behind it. Recent work spans deploying continent-scale air quality monitoring pipelines — blending satellite data with sparse sensor networks to predict PM2.5 levels across Africa — to engineering and evaluating RAG-based AI agents for enterprise use. I'm ranked in the top 1% of 200,000+ data scientists on Zindi, and off the clock I lead Google Developer Groups on Campus at the University of Khartoum, teaching machine learning, computer vision, and NLP to the next generation of developers.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS
+         ============================================================ -->
+    <section id="skills" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">What I Work With</h2>
+
+        <div class="skills-grid">
+          <!-- Core ML -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-card-dot"></span>
+              <span class="skill-card-title">Core</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Machine Learning</span>
+              <span class="skill-tag">Computer Vision</span>
+              <span class="skill-tag">NLP</span>
+              <span class="skill-tag">RAG Pipelines</span>
+              <span class="skill-tag">Data Visualization</span>
+              <span class="skill-tag">ETL</span>
+            </div>
+          </div>
+
+          <!-- Languages & Frameworks -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-card-dot"></span>
+              <span class="skill-card-title">Languages &amp; Frameworks</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">YOLO</span>
+              <span class="skill-tag">OpenCV</span>
+              <span class="skill-tag">NLTK</span>
+              <span class="skill-tag">LLMs</span>
+            </div>
+          </div>
+
+          <!-- MLOps & Cloud -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-card-dot"></span>
+              <span class="skill-card-title">MLOps &amp; Cloud</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">MLflow</span>
+              <span class="skill-tag">Google Cloud Platform (GCP)</span>
+              <span class="skill-tag">CI/CD</span>
+            </div>
+          </div>
+
+          <!-- Leadership & Collaboration -->
+          <div class="skill-card">
+            <div class="skill-card-header">
+              <span class="skill-card-dot"></span>
+              <span class="skill-card-title">Leadership &amp; Collaboration</span>
+            </div>
+            <div class="skill-tags">
+              <span class="skill-tag">Technical Leadership</span>
+              <span class="skill-tag">Community Management</span>
+              <span class="skill-tag">Public Speaking</span>
+              <span class="skill-tag">Agile Collaboration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPERIENCE (Timeline — content is genuinely sequential)
+         ============================================================ -->
+    <section id="experience" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Experience</span>
+        <h2 class="section-title">Where I've Worked</h2>
+
+        <div class="timeline">
+          <!-- Data Scientist — AirQo -->
+          <div class="timeline-item">
+            <h3 class="timeline-role">Data Scientist</h3>
+            <p class="timeline-org">AirQo</p>
+            <ul class="timeline-details">
+              <li>Spearheaded expansion of air quality monitoring across Africa, from limited sensor-based cities to continent-wide coverage, using satellite integration</li>
+              <li>Developed and deployed high-precision PM2.5 prediction models, integrating satellite data to fill sensor gaps</li>
+              <li>Designed scalable ML pipelines and optimized existing models for inference speed and accuracy</li>
+              <li>Enhanced data visualization dashboards, improving usability for stakeholders and policymakers</li>
+            </ul>
+          </div>
+
+          <!-- AI Agent Intern — NeuralSeek -->
+          <div class="timeline-item">
+            <h3 class="timeline-role">AI Agent Intern</h3>
+            <p class="timeline-org">NeuralSeek</p>
+            <ul class="timeline-details">
+              <li>Engineered and optimized intelligent AI agents, focused on refining Retrieval-Augmented Generation (RAG) pipelines</li>
+              <li>Advanced LLM performance through prompt engineering and automated evaluation workflows</li>
+              <li>Contributed to scalable agent architecture across enterprise use cases</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURED PROJECTS (fetched live from GitHub API)
+         ============================================================ -->
+    <section id="projects" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Projects</span>
+        <h2 class="section-title">Featured Work</h2>
+
+        <div class="projects-grid" id="projects-container">
+          <!-- Skeleton loaders — replaced by JS once GitHub API responds -->
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-line skeleton-line--title"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--body"></div>
+            <div class="skeleton-line skeleton-line--meta"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         LEADERSHIP & COMMUNITY
+         ============================================================ -->
+    <section id="community" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Community</span>
+        <h2 class="section-title">Leadership &amp; Community</h2>
+
+        <div class="community-grid">
+          <!-- GDG on Campus -->
+          <div class="community-item">
+            <h3 class="community-item-role">Google Developer Groups (GDG) on Campus</h3>
+            <p class="community-item-org">University of Khartoum</p>
+            <p class="community-item-dates">Lead — 2025–Present · Technical Lead — 2022–2025</p>
+            <ul class="community-item-details">
+              <li>Leads the university chapter; manages the core team and all chapter operations</li>
+              <li>Initiated a strategic partnership between GDG UofK and Code4Sudan for open-source collaboration</li>
+              <li>Manages end-to-end volunteer recruitment (applications, interviews) via the Bevy platform</li>
+              <li>Previously Technical Lead: delivered ML, Computer Vision, and NLP workshops to hundreds of students</li>
+            </ul>
+          </div>
+
+          <!-- AI Bootcamp -->
+          <div class="community-item">
+            <h3 class="community-item-role">AI Bootcamp — Content Creator</h3>
+            <p class="community-item-org">University of Khartoum &amp; Open Arab University</p>
+            <ul class="community-item-details">
+              <li>Produced educational video modules for beginners ("Pandas for Data Manipulation," "Tackling ML Problems")</li>
+              <li>Broke down ML theory into hands-on, practical tutorials</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         HONORS & AWARDS
+         ============================================================ -->
+    <section id="honors" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Honors</span>
+        <h2 class="section-title">Honors &amp; Awards</h2>
+
+        <div class="honors-grid">
+          <!-- Zindi -->
+          <div class="honor-card">
+            <h3 class="honor-card-platform">Zindi</h3>
+            <p class="honor-card-rank">Top 1% globally · ~1,800th of 200,000+ data scientists</p>
+            <div class="honor-medals">
+              <span class="honor-medal">
+                <span class="medal-dot medal-dot--gold" aria-hidden="true"></span>
+                1 Gold
+              </span>
+              <span class="honor-medal">
+                <span class="medal-dot medal-dot--silver" aria-hidden="true"></span>
+                3 Silver
+              </span>
+              <span class="honor-medal">
+                <span class="medal-dot medal-dot--bronze" aria-hidden="true"></span>
+                6 Bronze
+              </span>
+            </div>
+            <p class="honor-highlight">Former #1-ranked data scientist in Sudan on the platform</p>
+          </div>
+
+          <!-- Kaggle -->
+          <div class="honor-card">
+            <h3 class="honor-card-platform">Kaggle</h3>
+            <p class="honor-card-rank">Expert tier</p>
+            <div class="honor-medals">
+              <span class="honor-medal">
+                <span class="medal-dot medal-dot--silver" aria-hidden="true"></span>
+                1 Silver
+              </span>
+              <span class="honor-medal">
+                <span class="medal-dot medal-dot--bronze" aria-hidden="true"></span>
+                3 Bronze
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EDUCATION (Timeline — genuinely sequential)
+         ============================================================ -->
+    <section id="education" class="content-section">
+      <div class="container reveal">
+        <span class="section-label">Education</span>
+        <h2 class="section-title">Education</h2>
+
+        <div class="education-list">
+          <div class="education-item">
+            <h3 class="education-school">University of Rwanda</h3>
+            <p class="education-degree">Computer Science</p>
+            <p class="education-status">Started 2024 · In progress</p>
+          </div>
+
+          <div class="education-item">
+            <h3 class="education-school">University of Khartoum</h3>
+            <p class="education-degree">Mechanical Engineering</p>
+            <p class="education-status">Started 2021 · Paused 2024</p>
+          </div>
+        </div>
+
+        <p style="margin-top: var(--space-2xl); font-size: var(--text-sm); color: var(--color-text-tertiary);">
+          Languages: English (proficient) · Arabic (native)
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER / CONTACT
+       ============================================================ -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <h2 class="footer-heading">Let's Connect</h2>
+      <p class="footer-subtext">Interested in collaborating on ML projects, research, or community initiatives? Reach out.</p>
+
+      <div class="footer-links">
+        <a href="mailto:adamlogman@yahoo.com" class="footer-link" aria-label="Send email to Adam Logman">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          adamlogman@yahoo.com
+        </a>
+        <a href="https://www.linkedin.com/in/adamlogman" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Adam Logman on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/adamlogman" class="footer-link" target="_blank" rel="noopener noreferrer" aria-label="Adam Logman on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <p class="footer-copy">&copy; <span id="copyright-year"></span> Adam Logman. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
