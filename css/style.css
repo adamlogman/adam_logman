@@ -33,11 +33,11 @@
   --color-bg-code:        #E2E8F0;
   --color-text:           #0F1923;
   --color-text-secondary: #475569;
-  --color-text-tertiary:  #94A3B8;
-  --color-accent:         #0891B2;
-  --color-accent-hover:   #0E7490;
+  --color-text-tertiary:  #718096;
+  --color-accent:         #0E7490;
+  --color-accent-hover:   #155E75;
   --color-accent-subtle:  #ECFEFF;
-  --color-accent-warm:    #D97706;
+  --color-accent-warm:    #B45309;
   --color-accent-warm-subtle: #FFFBEB;
   --color-border:         #CBD5E1;
   --color-border-subtle:  #E2E8F0;
@@ -47,9 +47,15 @@
   --color-overlay:        rgba(15, 25, 35, 0.5);
 
   /* Medal colors */
-  --color-gold:   #CA8A04;
+  --color-gold:   #A16207;
   --color-silver: #6B7280;
   --color-bronze: #B45309;
+
+  /* Skill category accent colors */
+  --color-purple:     #7C3AED;
+  --color-purple-subtle: rgba(124, 58, 237, 0.08);
+  --color-green:      #059669;
+  --color-green-subtle: rgba(5, 150, 105, 0.08);
 
   /* Typography */
   --font-display: 'Space Grotesk', system-ui, sans-serif;
@@ -98,7 +104,7 @@
   --color-bg-code:        #1A2640;
   --color-text:           #E2E8F0;
   --color-text-secondary: #94A3B8;
-  --color-text-tertiary:  #64748B;
+  --color-text-tertiary:  #7C8CA2;
   --color-accent:         #22D3EE;
   --color-accent-hover:   #06B6D4;
   --color-accent-subtle:  rgba(34, 211, 238, 0.07);
@@ -114,6 +120,12 @@
   --color-gold:   #EAB308;
   --color-silver: #9CA3AF;
   --color-bronze: #D97706;
+
+  /* Skill category accent colors */
+  --color-purple:     #A78BFA;
+  --color-purple-subtle: rgba(167, 139, 250, 0.12);
+  --color-green:      #34D399;
+  --color-green-subtle: rgba(52, 211, 153, 0.10);
 }
 
 /* ---- Base ---- */
@@ -649,8 +661,8 @@ ul, ol {
 }
 
 .skill-card:nth-child(2) .skill-card-dot { background-color: var(--color-accent-warm); }
-.skill-card:nth-child(3) .skill-card-dot { background-color: #8B5CF6; }
-.skill-card:nth-child(4) .skill-card-dot { background-color: #10B981; }
+.skill-card:nth-child(3) .skill-card-dot { background-color: var(--color-purple); }
+.skill-card:nth-child(4) .skill-card-dot { background-color: var(--color-green); }
 
 .skill-card-title {
   font-family: var(--font-mono);
@@ -684,23 +696,13 @@ ul, ol {
 }
 
 .skill-card:nth-child(3) .skill-tag {
-  background-color: rgba(139, 92, 246, 0.08);
-  color: #8B5CF6;
-}
-
-[data-theme="dark"] .skill-card:nth-child(3) .skill-tag {
-  background-color: rgba(139, 92, 246, 0.12);
-  color: #A78BFA;
+  background-color: var(--color-purple-subtle);
+  color: var(--color-purple);
 }
 
 .skill-card:nth-child(4) .skill-tag {
-  background-color: rgba(16, 185, 129, 0.08);
-  color: #059669;
-}
-
-[data-theme="dark"] .skill-card:nth-child(4) .skill-tag {
-  background-color: rgba(16, 185, 129, 0.10);
-  color: #34D399;
+  background-color: var(--color-green-subtle);
+  color: var(--color-green);
 }
 
 /* ============================================================
@@ -1133,6 +1135,12 @@ ul, ol {
   color: var(--color-accent);
 }
 
+.languages-note {
+  margin-top: var(--space-2xl);
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
 /* ============================================================
    FOOTER / CONTACT
    ============================================================ */
@@ -1162,6 +1170,7 @@ ul, ol {
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-lg);
   margin-bottom: var(--space-3xl);

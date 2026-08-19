@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found — Adam Logman</title>
+  <meta name="description" content="The page you're looking for doesn't exist.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230E7490'/%3E%3Ctext x='50' y='56' font-size='42' font-weight='700' text-anchor='middle' dominant-baseline='middle' fill='white' font-family='system-ui,-apple-system,sans-serif'%3EAL%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      var t = localStorage.getItem('adam-theme-preference');
+      if (!t) t = window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <style>
+    :root {
+      --color-bg: #EFF3F8;
+      --color-bg-alt: #FFFFFF;
+      --color-text: #0F1923;
+      --color-text-secondary: #475569;
+      --color-accent: #0E7490;
+      --color-accent-hover: #155E75;
+      --color-border: #CBD5E1;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #080F1A;
+      --color-bg-alt: #111B2B;
+      --color-text: #E2E8F0;
+      --color-text-secondary: #94A3B8;
+      --color-accent: #22D3EE;
+      --color-accent-hover: #06B6D4;
+      --color-border: #1E2D42;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      transition: background-color 250ms ease, color 250ms ease;
+    }
+
+    .error-page {
+      text-align: center;
+      max-width: 480px;
+    }
+
+    .error-code {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 8rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-accent);
+      opacity: 0.2;
+      margin-bottom: 1rem;
+    }
+
+    .error-title {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .error-desc {
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .error-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #FFFFFF;
+      background-color: var(--color-accent);
+      border: 1.5px solid var(--color-accent);
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: background-color 250ms ease, border-color 250ms ease;
+    }
+
+    .error-link:hover {
+      background-color: var(--color-accent-hover);
+      border-color: var(--color-accent-hover);
+    }
+
+    .error-link:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <main class="error-page">
+    <p class="error-code" aria-hidden="true">404</p>
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-desc">The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/" class="error-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Back to portfolio
+    </a>
+  </main>
+</body>
+</html>
